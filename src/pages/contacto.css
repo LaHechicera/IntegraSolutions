@@ -1,0 +1,190 @@
+.contacto {
+  padding: 100px 80px;
+  background: linear-gradient(160deg, #f5f8fc 0%, #eaf0f8 100%);
+}
+
+.contacto__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contacto__badge {
+  margin-bottom: 20px;
+}
+
+.contacto__title {
+  margin-bottom: 16px;
+}
+
+.contacto__desc {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.contacto__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.dato__icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.dato strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2f2f2f;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.dato p {
+  font-size: 15px;
+  color: #555555;
+  margin: 0;
+}
+
+.contacto__form-wrap {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 44px 40px;
+  box-shadow: 0 8px 40px rgba(0, 91, 170, 0.08);
+}
+
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2f2f2f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #2f2f2f;
+  background: #fafcff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #005baa;
+  box-shadow: 0 0 0 3px rgba(0, 91, 170, 0.1);
+  background: #ffffff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b7b7b7;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.btn--submit {
+  background: #005baa;
+  color: #ffffff;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  align-self: flex-start;
+}
+
+.btn--submit:hover {
+  background: #0077d9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 91, 170, 0.25);
+}
+
+.contacto__success {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contacto__success span {
+  font-size: 56px;
+}
+
+.contacto__success h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2f2f2f;
+}
+
+.contacto__success p {
+  font-size: 16px;
+  color: #555555;
+}
+
+@media (max-width: 960px) {
+  .contacto {
+    padding: 72px 24px;
+  }
+
+  .contacto__container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contacto__form-wrap {
+    padding: 28px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
