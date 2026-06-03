@@ -3,19 +3,19 @@ import './nosotros.css';
 const pilares = [
   {
     icon: '🎯',
-    titulo: 'Capacitación',
+    titulo: 'Capacitaciones',
     texto:
       'Formamos a tus equipos con herramientas prácticas para enfrentar los desafíos laborales del día a día.',
   },
   {
     icon: '⚖️',
-    titulo: 'Asesoría Legal',
+    titulo: 'Asesoramiento Legal',
     texto:
       'Reducimos riesgos legales asesorando en legislación laboral vigente, contratos y obligaciones previsionales.',
   },
   {
     icon: '🔧',
-    titulo: 'Implementación',
+    titulo: 'Implementación de Sistemas',
     texto:
       'Configuramos y potenciamos plataformas como Buk, Softland y Talana para que funcionen a su máximo rendimiento.',
   },
@@ -29,22 +29,18 @@ export default function Nosotros() {
           <span className="section-badge nosotros__badge">Quiénes Somos</span>
           <h2 className="section-title">
             Integra Solutions:<br />
-            <span className="text-azul">RRHH sin fronteras</span>
+            <span className="text-azul">RRHH eficiente y digital</span>
           </h2>
           <p className="nosotros__desc">
-            Somos un servicio integral en recursos humanos que aborda tres dimensiones
-            críticas: <strong>capacitación</strong>, <strong>asesoría laboral</strong> e{' '}
-            <strong>implementación de sistemas</strong>.
+            Somos un servicio integral en recursos humanos donde abordamos tres dimensiones
+            críticas: <strong>capacitaciones</strong>, <strong>asesoría laboral</strong> e{' '}
+            <strong>integración de sistemas en recursos humanos</strong>.
           </p>
           <p className="nosotros__desc">
-            Nuestro valor reside en resolver problemas reales de las empresas: el
-            desconocimiento de la legislación laboral, la mala gestión de remuneraciones y
-            contratos, y la baja adopción de herramientas digitales.
+            Fortalecemos la gestión de Recursos Humanos mediante asesoría laboral, control de    remuneraciones y contratos, e implementación de herramientas digitales.
           </p>
           <p className="nosotros__desc">
-            No competimos con plataformas como Buk, Talana o SAP SuccessFactors.
-            Las <strong>potenciamos</strong>. Ordenamos datos, configuramos procesos y
-            capacitamos equipos para que tu inversión en tecnología genere impacto real.
+            <strong>Potenciamos</strong> plataformas como Buk, Talana o SAP SuccessFactors. Ordenamos datos, configuramos procesos y capacitamos equipos para que tu inversión en tecnología genere impacto real.
           </p>
         </div>
 
@@ -60,7 +56,7 @@ export default function Nosotros() {
           ))}
 
           <div className="nosotros__cta-box">
-            <p>¿Listo para profesionalizar tu área de RRHH?</p>
+            <p>¿Listo para <strong>potenciar</strong> tu área de RRHH?</p>
             <button
               className="btn btn--primary-dark"
               onClick={() =>

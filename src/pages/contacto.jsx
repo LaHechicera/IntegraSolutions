@@ -25,11 +25,11 @@ export default function Contacto() {
         <div className="contacto__info">
           <span className="section-badge contacto__badge">Contacto</span>
           <h2 className="section-title contacto__title">
-            Hablemos de tu<br />
-            <span className="text-azul">gestión de personas</span>
+            Hablemos!<br />
+            <span className="text-azul">Nos encantaría saber de ti.</span>
           </h2>
           <p className="contacto__desc">
-            Cuéntanos tu desafío y te ayudamos a encontrar la solución
+            Cuéntanos tu desafío y te ayudamos a dar con la solución
             más adecuada para tu empresa.
           </p>
 
@@ -52,7 +52,7 @@ export default function Contacto() {
               <span className="dato__icon">📍</span>
               <div>
                 <strong>Zona de cobertura</strong>
-                <p>Chile — Servicios presenciales y remotos</p>
+                <p>Servicios presenciales y remotos</p>
               </div>
             </div>
           </div>
