@@ -25,8 +25,8 @@ export default function Footer() {
         <div className="footer__brand">
           <h3 className="footer__logo-text">Integra Solutions</h3>
           <p className="footer__tagline">
-            Solución integral en Recursos Humanos para profesionalizar y modernizar
-            la gestión de personas en tu organización.
+            Solución integral en Recursos Humanos para potenciar y modernizar
+            la gestión de personas en tu negocio.
           </p>
         </div>
 

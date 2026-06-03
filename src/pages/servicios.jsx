@@ -73,7 +73,7 @@ const servicios = [
     id: 'sistemas',
     icon: '💻',
     titulo: 'Implementación de Sistemas',
-    subtitulo: 'Software de RRHH',
+    subtitulo: 'Softwares de RRHH',
     descripcion:
       'Ordenamos datos, configuramos procesos y capacitamos equipos para que tu plataforma de RRHH funcione al 100% desde el primer día.',
     items: [
@@ -130,8 +130,7 @@ export default function Servicios() {
             <span className="text-azul">Recursos Humanos</span>
           </h2>
           <p className="section-subtitle">
-            No vendemos servicios aislados. Entregamos una solución integral que
-            profesionaliza y moderniza la gestión de personas en tu organización.
+            Entregamos una solución integral que profesionaliza y moderniza la gestión de personas en tu organización.
           </p>
         </div>
 
