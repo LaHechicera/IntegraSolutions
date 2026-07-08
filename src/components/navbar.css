@@ -33,7 +33,7 @@
 
 /* ---------- Logo ---------- */
 .navbar__logo img {
-  height: 52px;
+  height: 75px;
   width: auto;
   object-fit: contain;
   transition: filter 0.3s ease;
@@ -41,7 +41,7 @@
 
 /* Sombra para que el logo se lea sobre el Hero cuando está transparente */
 .navbar:not(.navbar--scrolled) .navbar__logo img {
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.474));
 }
 
 /* ---------- Links ---------- */

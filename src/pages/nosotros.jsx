@@ -49,7 +49,7 @@ export default function Nosotros() {
           {pilares.map((p) => (
             <div key={p.titulo} className="pilar-card">
               <div className="pilar-card__icon">
-                <p.icon size={40} color="#3145DD" strokeWidth={1.5} />
+                <p.icon size={40} color="#5A66BB" strokeWidth={1.5} />
               </div>
               <div>
                 <h3 className="pilar-card__titulo">{p.titulo}</h3>

@@ -1,6 +1,11 @@
 .contacto {
   padding: 100px 80px;
-  background: linear-gradient(160deg, #f5f8fc 0%, #eaf0f8 100%);
+  background: linear-gradient(
+  to top,
+  rgba(156, 199, 255, 0.51),
+  rgba(170, 207, 255, 0.296),
+  rgba(255, 255, 255, 0.311)
+  );
   padding-top: 30px;
 }
 
@@ -145,6 +150,31 @@
   background: #0077d9;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 91, 170, 0.25);
+}
+
+.btn--submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.contacto__contador {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #888888;
+  margin-top: 4px;
+}
+
+.contacto__error {
+  color: #d12626;
+  background: #fdecec;
+  border: 1px solid #f5b5b5;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 .contacto__success {

@@ -146,7 +146,7 @@ export default function Servicios() {
                 {/* CARA FRONTAL */}
                 <div className="servicio-card__face servicio-card__face--front">
                   <div className="servicio-card__icon">
-                    {typeof s.icon === 'string' ? s.icon : <s.icon size={40} color='#3145DD' strokeWidth={1.5} />}
+                    {typeof s.icon === 'string' ? s.icon : <s.icon size={40} color='#3B4DD2' strokeWidth={1.5} />}
                   </div>
                   <h3 className="servicio-card__titulo">{s.titulo}</h3>
                   <p className="servicio-card__subtitulo">{s.subtitulo}</p>
