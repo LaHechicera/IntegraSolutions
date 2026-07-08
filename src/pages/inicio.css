@@ -4,9 +4,9 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 20px 80px 80px;
+  padding: 130px 80px 80px;
   overflow: hidden;
-  background: #003b73; /* fallback mientras carga la imagen */
+  background: #0072dd5d; /* fallback mientras carga la imagen */
 }
 
 /* ── Fondo con slideshow ── */
@@ -43,12 +43,20 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 59, 115, 0.82) 0%,
-    rgba(0, 91, 170, 0.75) 50%,
-    rgba(0, 119, 217, 0.65) 100%
-  );
+  background:
+    /* Capa 1 (arriba): oscurece la franja superior para la navbar */
+    linear-gradient(
+      to bottom,
+      rgba(0, 20, 45, 0.6) 0%,
+      rgba(0, 20, 45, 0) 220px
+    ),
+    /* Capa 2: tu overlay azul original */
+    linear-gradient(
+      to top,
+      rgba(0, 59, 115, 0.278) 0%,
+      rgba(0, 91, 170, 0.549) 50%,
+      rgba(0, 119, 217, 0.65) 100%
+    );
   pointer-events: none;
 }
 
@@ -78,6 +86,7 @@
   font-size: clamp(38px, 5.5vw, 64px);
   font-weight: 800;
   color: #ffffff;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.482));
   line-height: 1.12;
   margin-bottom: 24px;
 }
@@ -88,7 +97,8 @@
 
 .hero__subtitle {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.86));
   line-height: 1.75;
   margin-bottom: 44px;
   max-width: 560px;
@@ -128,7 +138,7 @@
 .btn--outline {
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.826);
 }
 
 .btn--outline:hover {
@@ -142,6 +152,8 @@
   display: flex;
   align-items: center;
   gap: 28px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.732));
+
 }
 
 .hero__stat {
@@ -158,14 +170,14 @@
 
 .hero__stat span {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgb(255, 255, 255);
   margin-top: 5px;
 }
 
 .hero__stat-divider {
   width: 1px;
   height: 44px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgb(255, 255, 255);
 }
 
 /* ── Responsive ── */

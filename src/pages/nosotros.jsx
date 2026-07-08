@@ -1,20 +1,21 @@
 import './nosotros.css';
+import { Target, Scale, Wrench } from 'lucide-react';
 
 const pilares = [
   {
-    icon: '🎯',
+    icon: Target,
     titulo: 'Capacitaciones',
     texto:
       'Formamos a tus equipos con herramientas prácticas para enfrentar los desafíos laborales del día a día.',
   },
   {
-    icon: '⚖️',
+    icon: Scale,
     titulo: 'Asesoramiento Legal',
     texto:
       'Reducimos riesgos legales asesorando en legislación laboral vigente, contratos y obligaciones previsionales.',
   },
   {
-    icon: '🔧',
+    icon: Wrench,
     titulo: 'Implementación de Sistemas',
     texto:
       'Configuramos y potenciamos plataformas como Buk, Softland y Talana para que funcionen a su máximo rendimiento.',
@@ -47,7 +48,9 @@ export default function Nosotros() {
         <div className="nosotros__pilares">
           {pilares.map((p) => (
             <div key={p.titulo} className="pilar-card">
-              <div className="pilar-card__icon">{p.icon}</div>
+              <div className="pilar-card__icon">
+                <p.icon size={40} color="#3145DD" strokeWidth={1.5} />
+              </div>
               <div>
                 <h3 className="pilar-card__titulo">{p.titulo}</h3>
                 <p className="pilar-card__texto">{p.texto}</p>
