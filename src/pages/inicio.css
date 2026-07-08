@@ -1,29 +1,70 @@
+/* ── Hero section ── */
 .hero {
   position: relative;
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px 90px 80px;
-  background: linear-gradient(135deg, #00386c 0%, #1479d0 60%, #3d9eee 100%);
+  padding: 130px 80px 80px;
   overflow: hidden;
-  gap: 48px;
+  background: #0072dd5d; /* fallback mientras carga la imagen */
 }
 
+/* ── Fondo con slideshow ── */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  /* Ken Burns sutil: siempre haciendo zoom lento */
+  animation: kenBurns 10s ease-in-out infinite alternate;
+}
+
+.hero__bg-slide--active {
+  opacity: 1;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1);     transform-origin: center center; }
+  to   { transform: scale(1.08);  transform-origin: 55% 45%; }
+}
+
+/* ── Overlay azul que hace las imágenes tenues ── */
 .hero__overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(0, 119, 217, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(0, 59, 115, 0.3) 0%, transparent 50%);
+    /* Capa 1 (arriba): oscurece la franja superior para la navbar */
+    linear-gradient(
+      to bottom,
+      rgba(0, 20, 45, 0.6) 0%,
+      rgba(0, 20, 45, 0) 220px
+    ),
+    /* Capa 2: tu overlay azul original */
+    linear-gradient(
+      to top,
+      rgba(0, 59, 115, 0.278) 0%,
+      rgba(0, 91, 170, 0.549) 50%,
+      rgba(0, 119, 217, 0.65) 100%
+    );
   pointer-events: none;
 }
 
+/* ── Contenido encima del overlay ── */
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  flex: 1;
+  max-width: 680px;
 }
 
 .hero__badge {
@@ -35,40 +76,44 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 6px 16px;
+  padding: 6px 18px;
   border-radius: 50px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(4px);
 }
 
 .hero__title {
-  font-size: clamp(36px, 5vw, 58px);
+  font-size: clamp(38px, 5.5vw, 64px);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.15;
-  margin-bottom: 20px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.482));
+  line-height: 1.12;
+  margin-bottom: 24px;
 }
 
 .hero__title--accent {
-  color: #b3d9ff;
+  color: #a0cbf6;
 }
 
 .hero__subtitle {
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.86));
   line-height: 1.75;
-  margin-bottom: 40px;
-  max-width: 520px;
+  margin-bottom: 44px;
+  max-width: 560px;
 }
 
+/* ── Botones ── */
 .hero__actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 52px;
+  margin-bottom: 56px;
 }
 
 .btn {
-  padding: 14px 32px;
+  padding: 14px 34px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 700;
@@ -87,25 +132,28 @@
 .btn--primary:hover {
   background: #e8f2ff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .btn--outline {
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.826);
 }
 
 .btn--outline:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   border-color: #ffffff;
   transform: translateY(-2px);
 }
 
+/* ── Stats ── */
 .hero__stats {
   display: flex;
   align-items: center;
   gap: 28px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.732));
+
 }
 
 .hero__stat {
@@ -114,7 +162,7 @@
 }
 
 .hero__stat strong {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
   color: #ffffff;
   line-height: 1;
@@ -122,39 +170,26 @@
 
 .hero__stat span {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
-  margin-top: 4px;
+  color: rgb(255, 255, 255);
+  margin-top: 5px;
 }
 
 .hero__stat-divider {
   width: 1px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.25);
+  height: 44px;
+  background: rgb(255, 255, 255);
 }
 
-.hero__image-wrap {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  max-width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero__image {
-  width: 100%;
-  max-width: 460px;
-  border-radius: 20px;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
-  object-fit: cover;
-}
-
+/* ── Responsive ── */
 @media (max-width: 960px) {
   .hero {
-    flex-direction: column;
     padding: 100px 32px 60px;
     text-align: center;
+    min-height: 90vh;
+  }
+
+  .hero__content {
+    max-width: 100%;
   }
 
   .hero__subtitle {
@@ -169,12 +204,14 @@
   .hero__stats {
     justify-content: center;
   }
+}
 
-  .hero__image-wrap {
-    max-width: 100%;
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 20px 48px;
   }
 
-  .hero__image {
-    max-width: 360px;
+  .hero__title {
+    font-size: clamp(32px, 8vw, 44px);
   }
 }

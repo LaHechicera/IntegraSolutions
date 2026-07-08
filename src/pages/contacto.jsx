@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { MailCheck, Smartphone, Pin } from 'lucide-react';
 import './contacto.css';
 
 export default function Contacto() {
@@ -25,34 +26,40 @@ export default function Contacto() {
         <div className="contacto__info">
           <span className="section-badge contacto__badge">Contacto</span>
           <h2 className="section-title contacto__title">
-            Hablemos de tu<br />
-            <span className="text-azul">gestión de personas</span>
+            Hablemos!<br />
+            <span className="text-azul">Nos encantaría saber de ti.</span>
           </h2>
           <p className="contacto__desc">
-            Cuéntanos tu desafío y te ayudamos a encontrar la solución
+            Cuéntanos tu desafío y te ayudamos a dar con la solución
             más adecuada para tu empresa.
           </p>
 
           <div className="contacto__datos">
             <div className="dato">
-              <span className="dato__icon">📧</span>
+              <span className="dato__icon">
+                <MailCheck size={24} color="#3145DD" strokeWidth={1.5} />
+              </span>
               <div>
                 <strong>Email</strong>
                 <p>contacto@integrasolutions.cl</p>
               </div>
             </div>
             <div className="dato">
-              <span className="dato__icon">📱</span>
+              <span className="dato__icon">
+                <Smartphone size={24} color="#3145DD" strokeWidth={1.5} />
+              </span>
               <div>
                 <strong>WhatsApp</strong>
                 <p>+56 9 1234 5678</p>
               </div>
             </div>
             <div className="dato">
-              <span className="dato__icon">📍</span>
+              <span className="dato__icon">
+                <Pin size={24} color="#3145DD" strokeWidth={1.5} />
+              </span>
               <div>
                 <strong>Zona de cobertura</strong>
-                <p>Chile — Servicios presenciales y remotos</p>
+                <p>Servicios presenciales y remotos</p>
               </div>
             </div>
           </div>
@@ -121,6 +128,19 @@ export default function Contacto() {
                   <option>Logística y Operaciones</option>
                   <option>Solución Integral</option>
                 </select>
+
+                <label>Modalidad de Servicio</label>
+                <select
+                  name="tipo_servicio"
+                  value={form.tipo_servicio}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Seleccione de Modalidad</option>
+                  <option>Presencial</option>
+                  <option>Remoto</option>
+                </select>
+
               </div>
 
               <div className="form-group">

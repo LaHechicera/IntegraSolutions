@@ -1,6 +1,7 @@
 .contacto {
   padding: 100px 80px;
   background: linear-gradient(160deg, #f5f8fc 0%, #eaf0f8 100%);
+  padding-top: 30px;
 }
 
 .contacto__container {
@@ -83,7 +84,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
 }
 
 .form-group label {

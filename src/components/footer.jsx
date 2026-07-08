@@ -1,4 +1,5 @@
 import './footer.css';
+import { MailCheck, Smartphone, Pin } from 'lucide-react';
 
 const links = [
   { label: 'Inicio', href: '#inicio' },
@@ -25,8 +26,8 @@ export default function Footer() {
         <div className="footer__brand">
           <h3 className="footer__logo-text">Integra Solutions</h3>
           <p className="footer__tagline">
-            Solución integral en Recursos Humanos para profesionalizar y modernizar
-            la gestión de personas en tu organización.
+            Solución integral en Recursos Humanos para potenciar y modernizar
+            la gestión de personas en tu negocio.
           </p>
         </div>
 
@@ -59,9 +60,18 @@ export default function Footer() {
         <div className="footer__col">
           <h4>Contacto</h4>
           <ul className="footer__contact-list">
-            <li>📧 contacto@integrasolutions.cl</li>
-            <li>📱 +56 9 1234 5678</li>
-            <li>📍 Chile — Presencial y Remoto</li>
+            <li>
+              <MailCheck size={16} color="#a0cbf6" strokeWidth={1.5} />
+              contacto@integrasolutions.cl
+            </li>
+            <li>
+              <Smartphone size={16} color="#a0cbf6" strokeWidth={1.5} />
+              +56 9 1234 5678
+            </li>
+            <li>
+              <Pin size={16} color="#a0cbf6" strokeWidth={1.5} />
+              Chile — Presencial y Remoto
+            </li>
           </ul>
         </div>
       </div>

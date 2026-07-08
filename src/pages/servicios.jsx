@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { NotebookText, CircleDollarSign, FolderOpen, HardHat, Laptop, Award, Truck } from 'lucide-react';
 import './servicios.css';
 
 const servicios = [
   {
     id: 'rrhh',
-    icon: '📋',
+    icon: NotebookText,
     titulo: 'RRHH',
     subtitulo: 'Gestión de Documentos',
     descripcion:
@@ -21,7 +22,7 @@ const servicios = [
   },
   {
     id: 'remuneraciones',
-    icon: '💰',
+    icon: CircleDollarSign,
     titulo: 'Remuneraciones y Previsión',
     subtitulo: 'Proceso Integral',
     descripcion:
@@ -38,7 +39,7 @@ const servicios = [
   },
   {
     id: 'documentos',
-    icon: '📁',
+    icon: FolderOpen,
     titulo: 'Doc. Laboral y Cumplimiento',
     subtitulo: 'Asesoría Legal',
     descripcion:
@@ -54,7 +55,7 @@ const servicios = [
   },
   {
     id: 'prevencion',
-    icon: '🦺',
+    icon: HardHat,
     titulo: 'Prevención de Riesgos',
     subtitulo: 'Seguridad Ocupacional',
     descripcion:
@@ -71,9 +72,9 @@ const servicios = [
   },
   {
     id: 'sistemas',
-    icon: '💻',
+    icon: Laptop,
     titulo: 'Implementación de Sistemas',
-    subtitulo: 'Software de RRHH',
+    subtitulo: 'Softwares de RRHH',
     descripcion:
       'Ordenamos datos, configuramos procesos y capacitamos equipos para que tu plataforma de RRHH funcione al 100% desde el primer día.',
     items: [
@@ -87,7 +88,7 @@ const servicios = [
   },
   {
     id: 'certificacion',
-    icon: '🏅',
+    icon: Award,
     titulo: 'Certificación y Plataformas',
     subtitulo: 'Bolsa de Trabajo',
     descripcion:
@@ -103,7 +104,7 @@ const servicios = [
   },
   {
     id: 'logistica',
-    icon: '🚚',
+    icon: Truck,
     titulo: 'Logística y Operaciones',
     subtitulo: 'Gestión Operativa',
     descripcion:
@@ -130,8 +131,7 @@ export default function Servicios() {
             <span className="text-azul">Recursos Humanos</span>
           </h2>
           <p className="section-subtitle">
-            No vendemos servicios aislados. Entregamos una solución integral que
-            profesionaliza y moderniza la gestión de personas en tu organización.
+            Entregamos una solución integral que profesionaliza y moderniza la gestión de personas en tu organización.
           </p>
         </div>
 
@@ -142,24 +142,33 @@ export default function Servicios() {
               className={`servicio-card ${activo === s.id ? 'servicio-card--activo' : ''}`}
               onClick={() => setActivo(activo === s.id ? null : s.id)}
             >
-              <div className="servicio-card__icon">{s.icon}</div>
-              <h3 className="servicio-card__titulo">{s.titulo}</h3>
-              <p className="servicio-card__subtitulo">{s.subtitulo}</p>
-              <p className="servicio-card__desc">{s.descripcion}</p>
-
-              <div className={`servicio-card__items ${activo === s.id ? 'visible' : ''}`}>
-                <ul>
-                  {s.items.map((item) => (
-                    <li key={item}>
-                      <span className="check">✓</span> {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="servicio-card__inner">
+                {/* CARA FRONTAL */}
+                <div className="servicio-card__face servicio-card__face--front">
+                  <div className="servicio-card__icon">
+                    {typeof s.icon === 'string' ? s.icon : <s.icon size={40} color='#3145DD' strokeWidth={1.5} />}
+                  </div>
+                  <h3 className="servicio-card__titulo">{s.titulo}</h3>
+                  <p className="servicio-card__subtitulo">{s.subtitulo}</p>
+                  <p className="servicio-card__desc">{s.descripcion}</p>
+                  <span className="servicio-card__toggle">Ver detalle ↻</span>
+                </div>
+          
+                {/* CARA TRASERA */}
+                <div className="servicio-card__face servicio-card__face--back">
+                  <h3 className="servicio-card__titulo servicio-card__titulo--back">
+                    {s.titulo}
+                  </h3>
+                  <ul className="servicio-card__items-list">
+                    {s.items.map((item) => (
+                      <li key={item}>
+                        <span className="check">✓</span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="servicio-card__toggle">Volver ↺</span>
+                </div>
               </div>
-
-              <button className="servicio-card__toggle">
-                {activo === s.id ? 'Ver menos ↑' : 'Ver detalle ↓'}
-              </button>
             </div>
           ))}
         </div>
