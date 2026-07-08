@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Logo from '../assets/IntegraSolutionLogo.png';
+import Logo from '../assets/LogoIntegra.png';
 import './navbar.css';
 
 const links = [
@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__logo">
-        <img src={Logo} alt="Integra Solutions" />
+        <img src={Logo} alt="Integra Solutions" width="120" height="52" />
       </div>
 
       <button

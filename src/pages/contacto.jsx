@@ -1,23 +1,57 @@
 import { useState } from 'react';
-import { MailCheck, Smartphone, Pin } from 'lucide-react';
+import { MailCheck, Smartphone, Pin, CheckCheck } from 'lucide-react';
 import './contacto.css';
 
 export default function Contacto() {
+  const ACCESS_KEY = '23be5656-dfa8-4b55-9ddc-bc5766b64552';
+
   const [form, setForm] = useState({
     nombre: '',
     empresa: '',
     email: '',
     servicio: '',
+    tipo_servicio: '',
     mensaje: '',
   });
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEnviado(true);
+    setEnviando(true);
+    setError('');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `Nueva Consulta — ${form.nombre}, ${form.empresa}`,
+          from_name: 'Integra Solutions Web',
+          ...form,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setEnviado(true);
+      } else {
+        setError('No pudimos enviar tu mensaje. Inténtalo nuevamente.');
+      }
+    } catch {
+      setError('Hubo un problema de conexión. Revisa tu internet e inténtalo otra vez.');
+    } finally {
+      setEnviando(false);
+    }
   };
 
   return (
@@ -46,7 +80,7 @@ export default function Contacto() {
             </div>
             <div className="dato">
               <span className="dato__icon">
-                <Smartphone size={24} color="#3145DD" strokeWidth={1.5} />
+                <Smartphone size={24} color="#18D12E" strokeWidth={1.5} />
               </span>
               <div>
                 <strong>WhatsApp</strong>
@@ -55,7 +89,7 @@ export default function Contacto() {
             </div>
             <div className="dato">
               <span className="dato__icon">
-                <Pin size={24} color="#3145DD" strokeWidth={1.5} />
+                <Pin size={24} color="#FE2929" strokeWidth={1.5} />
               </span>
               <div>
                 <strong>Zona de cobertura</strong>
@@ -68,12 +102,23 @@ export default function Contacto() {
         <div className="contacto__form-wrap">
           {enviado ? (
             <div className="contacto__success">
-              <span>✅</span>
+              <span className="dato__icon">
+                <CheckCheck size={60} color="#2CB03C" strokeWidth={1.5} />
+              </span>
               <h3>¡Mensaje enviado!</h3>
               <p>Te contactaremos a la brevedad. Gracias por tu interés.</p>
             </div>
           ) : (
             <form className="contacto__form" onSubmit={handleSubmit}>
+              {/* Campo honeypot anti-spam: oculto para usuarios reales */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ display: 'none' }}
+              />
+
               <div className="form-row">
                 <div className="form-group">
                   <label>Nombre</label>
@@ -149,14 +194,20 @@ export default function Contacto() {
                   name="mensaje"
                   placeholder="Cuéntanos tu desafío o necesidad..."
                   rows={5}
+                  maxLength={1000}
                   value={form.mensaje}
                   onChange={handleChange}
                   required
                 />
+                <span className="contacto__contador">
+                  {form.mensaje.length}/1000
+                </span>
               </div>
 
-              <button type="submit" className="btn btn--submit">
-                Enviar mensaje →
+              {error && <p className="contacto__error">{error}</p>}
+
+              <button type="submit" className="btn btn--submit" disabled={enviando}>
+                {enviando ? 'Enviando…' : 'Enviar mensaje →'}
               </button>
             </form>
           )}
