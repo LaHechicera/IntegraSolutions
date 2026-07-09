@@ -64,6 +64,16 @@
   gap: 8px;
 }
 
+.footer__whatsapp {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__whatsapp:hover {
+  color: #ffffff;
+}
+
 .footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 24px 80px;

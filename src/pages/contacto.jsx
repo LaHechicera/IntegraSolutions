@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MailCheck, Smartphone, Pin, CheckCheck } from 'lucide-react';
+import { WHATSAPP_DISPLAY, whatsappUrl } from '../constants';
 import './contacto.css';
 
 export default function Contacto() {
@@ -75,18 +76,23 @@ export default function Contacto() {
               </span>
               <div>
                 <strong>Email</strong>
-                <p>contacto@integrasolutions.cl</p>
+                <p>Disponible próximamente</p>
               </div>
             </div>
-            <div className="dato">
+            <a
+              className="dato dato--link"
+              href={whatsappUrl('Hola Integra Solutions, me interesa una asesoría en RRHH.')}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="dato__icon">
                 <Smartphone size={24} color="#18D12E" strokeWidth={1.5} />
               </span>
               <div>
                 <strong>WhatsApp</strong>
-                <p>+56 9 1234 5678</p>
+                <p>{WHATSAPP_DISPLAY}</p>
               </div>
-            </div>
+            </a>
             <div className="dato">
               <span className="dato__icon">
                 <Pin size={24} color="#FE2929" strokeWidth={1.5} />
@@ -94,6 +100,7 @@ export default function Contacto() {
               <div>
                 <strong>Zona de cobertura</strong>
                 <p>Servicios presenciales y remotos</p>
+                <p>(zona sur: Osorno a Puerto Montt)</p>
               </div>
             </div>
           </div>

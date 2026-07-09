@@ -1,5 +1,6 @@
 import './footer.css';
 import { MailCheck, Smartphone, Pin } from 'lucide-react';
+import { WHATSAPP_DISPLAY, whatsappUrl } from '../constants';
 
 const links = [
   { label: 'Inicio', href: '#inicio' },
@@ -62,15 +63,22 @@ export default function Footer() {
           <ul className="footer__contact-list">
             <li>
               <MailCheck size={16} color="#a0cbf6" strokeWidth={1.5} />
-              contacto@integrasolutions.cl
+              Disponible próximamente
             </li>
             <li>
               <Smartphone size={16} color="#a0cbf6" strokeWidth={1.5} />
-              +56 9 1234 5678
+              <a
+                className="footer__whatsapp"
+                href={whatsappUrl('Hola Integra Solutions, los contacto desde el sitio web.')}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {WHATSAPP_DISPLAY}
+              </a>
             </li>
             <li>
-              <Pin size={16} color="#a0cbf6" strokeWidth={1.5} />
-              Chile — Presencial y Remoto
+              <Pin size={35} color="#a0cbf6" strokeWidth={1.5} />
+              Chile — Presencial y Remoto (zona sur: Osorno a Puerto Montt)
             </li>
           </ul>
         </div>
