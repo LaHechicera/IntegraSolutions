@@ -45,6 +45,17 @@
   gap: 16px;
 }
 
+.dato--link {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.dato--link:hover {
+  opacity: 0.75;
+}
+
 .dato__icon {
   font-size: 24px;
   flex-shrink: 0;
