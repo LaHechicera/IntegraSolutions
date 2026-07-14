@@ -81,7 +81,7 @@ export default function Contacto() {
             </div>
             <a
               className="dato dato--link"
-              href={whatsappUrl('Hola Integra Solutions, me interesa una asesoría en RRHH.')}
+              href={whatsappUrl('¡Hola Integra Solutions! me interesaria más información respecto a sus servicios en Recursos Humanos 😁.')}
               target="_blank"
               rel="noopener noreferrer"
             >
