@@ -69,7 +69,7 @@ export default function Footer() {
               <Smartphone size={16} color="#a0cbf6" strokeWidth={1.5} />
               <a
                 className="footer__whatsapp"
-                href={whatsappUrl('Hola Integra Solutions, los contacto desde el sitio web.')}
+                href={whatsappUrl('¡Hola Integra Solutions! me interesaria más información respecto a sus servicios en Recursos Humanos.😁')}
                 target="_blank"
                 rel="noopener noreferrer"
               >
